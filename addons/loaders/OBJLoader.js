@@ -14,8 +14,8 @@ import {
 	Vector3,
 	Color,
 	SRGBColorSpace
-} from '../../../build/three.module.js';
-//} from 'three';
+} from 'three';
+//} from '../../../build/three.module.js';
 
 // o object_name | g group_name
 const _object_pattern = /^[og]\s*(.+)?/;
