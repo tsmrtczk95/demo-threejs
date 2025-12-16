@@ -1,20 +1,38 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Shoes 3JS Demo</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="utf-8">
+    <title>My first three.js app</title>
+    <style>
+      body { margin: 0; }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.182/examples/jsm/"
+            }
+          }
+        </script>
+    <script src="./build/three.module.min.js"></script>
+    <script type="text/javascript" src="./addons/loaders/OBJLoader.js"></script>
+    <script type="text/javascript" src="./addons/loaders/MTLLoader.js"></script>
+    <script type="text/javascript" src="./addons/controls/OrbitControls.js"></script>
   </head>
   <body>
-    <header>
-      <h1>A simple three.js app</h1>
-    </header>
-
-    <main>
-      <div id="container3D"></div>
-    </main>
-
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="/main.js"></script>
+    <script>
+      const mtlLoader = new THREE.MTLLoader()
+      mtlLoader.load('./models/mesh.mtl', (materials) => {
+        materials.preload()
+        // loading geometry
+        const objLoader = new THREE.OBJLoader()
+        objLoader.setMaterials(materials)
+        objLoader.load('./models/mesh.obj', (object) => {
+          mesh = object
+          scene.add(mesh)
+        })
+      })
+    </script>
   </body>
 </html>
