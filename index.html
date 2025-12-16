@@ -5,7 +5,7 @@
     <title>My first three.js app</title>
     <style>
       body { margin: 0; }
-    </style>
+    </style><!--
     <script type="importmap">
       {
         "imports": {
@@ -13,7 +13,7 @@
           "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.182/examples/jsm/"
             }
           }
-        </script>
+        </script>-->
     <script src="./build/three.module.min.js"></script>
     <script type="text/javascript" src="./addons/loaders/OBJLoader.js"></script>
     <script type="text/javascript" src="./addons/loaders/MTLLoader.js"></script>
@@ -22,7 +22,7 @@
   <body>
     <script type="module" src="/main.js"></script>
     <script>
-      import * as THREE from 'three';
+      import * as THREE from './build/three.module.min.js';
       import { OrbitControls } from './addons/controls/OrbitControls.js';
       import { OBJLoader } from './addons/loaders/OBJLoader.js';
       import { MTLLoader } from './addons/loaders/MTLLoader.js';
