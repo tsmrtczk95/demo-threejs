@@ -11,7 +11,8 @@ import {
 	TextureLoader,
 	Vector2,
 	SRGBColorSpace
-} from 'three';
+} from '../../../build/three.module.js';
+// } from 'three';
 
 /**
  * A loader for the MTL format.
