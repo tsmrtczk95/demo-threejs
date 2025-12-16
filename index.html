@@ -66,10 +66,10 @@
     controls.autoRotateSpeed = 1.2;
 
     // Load MTL + OBJ
-    const basePath = "/models/";
+    // const basePath = "/models/";
 
     const mtlLoader = new MTLLoader();
-    mtlLoader.setPath(basePath);
+    mtlLoader.setPath("/models/");
     //mtlLoader.setResoursePath(basePath);
 
     mtlLoader.load("mesh.mtl", materials => {
@@ -77,7 +77,7 @@
       
       const objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
-      objLoader.setPath(basePath);
+      objLoader.setPath("/models/");
       objLoader.load("mesh.obj", obj => {
 
         // Auto center & scale
