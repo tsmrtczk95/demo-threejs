@@ -4,27 +4,20 @@
   <meta charset="utf-8">
   <title>Three.js OBJ Viewer</title>
   <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-    }
-    #objViewer {
-      width: 100%;
-      height: 100vh;
-    }
+    body { margin: 0; overflow: hidden; }
+    #objViewer { width: 100%; height: 100vh; }
   </style>
 </head>
 
 <body>
   <div id="objViewer"></div>
   <script type="module">
-    import * as THREE from '/demo-threejs/build/three.module.js';
-    import { OrbitControls } from '/demo-threejs/addons/controls/OrbitControls.js';
-    import { MTLLoader } from '/demo-threejs/addons/loaders/MTLLoader.js';
-    import { OBJLoader } from '/demo-threejs/addons/loaders/OBJLoader.js';
+    import * as THREE from './build/three.module.js';
+    import { OrbitControls } from './addons/controls/OrbitControls.js';
+    import { MTLLoader } from './addons/loaders/MTLLoader.js';
+    import { OBJLoader } from './addons/loaders/OBJLoader.js';
 
     const container = document.getElementById("objViewer");
-
     // Scene
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf4f4f4);
